@@ -1,5 +1,5 @@
 'use strict';
-
+process.env.MONGOHQ_URL = 'mongodb://bencallis1:Katief9727@ds031661.mongolab.com:31661/mean-material';
 module.exports = {
     db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean',
     facebook: {
