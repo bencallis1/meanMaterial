@@ -1,0 +1,25 @@
+<div flex layout="row">
+    <!-- Container #3 Left -->
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2">
+        <md-list>
+            <md-item ng-repeat="it in ul.users">
+                <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+                    <md-icon md-svg-icon="{{it.nav}}" class="avatar"></md-icon>
+                    {{it.name}}
+                </md-button>
+            </md-item>
+        </md-list>
+    </md-sidenav>
+
+    <!-- Container #4 Right -->
+    <md-content flex id="content">
+        <!-- User details sample -->
+        <md-icon md-svg-icon="{{ul.selected.nav}}" class="avatar"></md-icon>
+        <h2>{{ul.selected.name}}</h2>
+        <p>{{ul.selected.content}}</p>
+
+        <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
+            <md-icon md-svg-icon="share" ></md-icon>
+        </md-button>
+    </md-content>
+</div>
