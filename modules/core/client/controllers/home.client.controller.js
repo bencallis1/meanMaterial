@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication', 'usersService', '$mdSidenav', '$mdBottomSheet', '$log',
-    function($scope, Authentication, usersService, $mdSidenav, $mdBottomSheet, $log) {
+angular.module('core').controller('HomeController', ['$scope', '$state', '$stateParams', 'Authentication', 'usersService', '$mdSidenav', '$mdBottomSheet', '$log',
+    function($scope, Authentication, $state, $stateParams, usersService, $mdSidenav, $mdBottomSheet, $log) {
         // This provides Authentication context.
         $scope.authentication = Authentication;
 
@@ -39,6 +39,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
          * Select the current avatars
          * @param menuId
          */
+
         function selectUser ( user ) {
             self.selected = angular.isNumber(user) ? $scope.users[user] : user;
             self.toggleList();
