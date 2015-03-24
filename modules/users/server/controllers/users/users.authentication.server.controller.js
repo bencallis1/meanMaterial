@@ -13,7 +13,7 @@ var _ = require('lodash'),
 /**
  * Signup
  */
-exports.signup = function(req, res) {
+exports.create = function(req, res) {
 	// For security measurement we remove the roles from the req.body object
 	delete req.body.roles;
 

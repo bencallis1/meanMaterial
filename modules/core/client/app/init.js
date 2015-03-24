@@ -9,7 +9,7 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
         $locationProvider.html5Mode(true).hashPrefix('!');
  
         $mdThemingProvider.theme('default')
-            .primaryPalette('grey', {
+            .primaryPalette('blue', {
                 'default':'700'
             })
             .accentPalette('cyan', {

@@ -59,6 +59,11 @@ var UserSchema = new Schema({
 		default: '',
 		validate: [validateLocalStrategyPassword, 'Password should be longer']
 	},
+    phone: {
+        type: String,
+        default: '',
+        trim: true
+    },
 	salt: {
 		type: String
 	},
@@ -86,6 +91,10 @@ var UserSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
+    user: {
+        type: Schema.ObjectId,
+        ref: 'User'
+    },
 	/* For reset password */
 	resetPasswordToken: {
 		type: String
