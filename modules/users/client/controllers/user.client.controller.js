@@ -3,17 +3,13 @@
  */
 'use strict';
 
-angular.module('users').controller('usersController', ['$scope', '$stateParams', '$http', '$location', 'Authentication',
-    function($scope, $stateParams, $http, $location, Authentication) {
+angular.module('users').controller('usersController', ['$scope', '$stateParams', '$http', '$location', 'Authentication','Users',
+    function($scope, $stateParams, $http, $location, Authentication, Users) {
         $scope.authentication = Authentication;
 
-        // If user is signed in then redirect back home
-        if ($scope.authentication.user) $location.path('/');
-
-
         //create new User
-        $scope.create = function create() {
-            var user = new User ({
+        $scope.create = function() {
+            var user = new Users ({
                 firstName: this.firstName,
                 lastName: this.lastName,
                 displayName: this.displayName,
@@ -46,6 +42,10 @@ angular.module('users').controller('usersController', ['$scope', '$stateParams',
                             $scope.users.splice(i,1);
                         }
                     }
+                } else{
+                    $scope.user.$remove(function(){
+                        $location.path('users');
+                    });
                 }
             };
 

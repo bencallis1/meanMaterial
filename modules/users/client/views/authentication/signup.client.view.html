@@ -1,33 +1,29 @@
 <div data-ng-controller="AuthenticationController" layout="column">
     <md-content class="md-padding" layout="column">
-        <form ng-submit="create()" novalidate>
+        <form ng-submit="signup()" novalidate>
             <div  layout="row" layout-align="center center ">
             <h1>Welcome To Volunteer Connnection Please Fill out Sign Up Form</h1>
             </div>
             <div layout="column">
                 <md-input-container flex>
                     <label>First Name</label>
-                    <input type="text" data-ng-model="firstName" id="firstname"/>
+                    <input type="text" data-ng-model="credentials.firstName" id="firstname"/>
                 </md-input-container>
                 <md-input-container flex>
                     <label>Last Name</label>
-                    <input type="text" data-ng-model="lastName" id="lastname"/>
+                    <input type="text" data-ng-model="credentials.lastName" id="lastname"/>
                 </md-input-container>
                 <md-input-container flex>
                     <label>Email</label>
-                    <input type="text" data-ng-model="email" id="email"/>
-                </md-input-container>
-                <md-input-container flex>
-                    <label>Phone</label>
-                    <input type="Number" data-ng-model="phone" id="phone"/>
+                    <input type="text" data-ng-model="credentials.email" id="email"/>
                 </md-input-container>
                 <md-input-container flex>
                     <label>Create Username</label>
-                    <input type="text" data-ng-model="username" id="username"/>
+                    <input type="text" data-ng-model="credentials.username" id="username"/>
                 </md-input-container>
                 <md-input-container flex>
                     <label>Create Password</label>
-                    <input type="password" data-ng-model="password" id="password"/>
+                    <input type="password" data-ng-model="credentials.password" id="password"/>
                 </md-input-container>
             </div>
             <md-button type="submit" class="md-raised md-primary" ng-click="">Create</md-button>
