@@ -3,10 +3,20 @@
  */
 'use strict';
 
-angular.module('users').controller('usersController', ['$scope', '$stateParams', '$http', '$location', 'Authentication','Users',
+angular.module('users').controller('usersController', ['$scope', '$stateParams', '$http', '$location', 'Authentication', 'Users','usersService',
     function($scope, $stateParams, $http, $location, Authentication, Users) {
         $scope.authentication = Authentication;
+        $scope.signout = function() {
+            $http.post('/api/users/logout', $scope.credentials).success(function(response) {
+                // If successful we assign the response to the global user model
+                $scope.authentication.user = response;
 
+                // And redirect to the index page
+                $location.path('/');
+            }).error(function(response) {
+                $scope.error = response.message;
+            });
+        };
         //create new User
         $scope.create = function() {
             var user = new Users ({

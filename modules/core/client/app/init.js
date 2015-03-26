@@ -12,14 +12,15 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
             .primaryPalette('blue', {
                 'default':'700'
             })
-            .accentPalette('cyan', {
-                'default': 'A100'
+            .accentPalette('purple', {
+                'default': '400'
             });
  
         // Register the user `avatar` icons
         $mdIconProvider
             .defaultIconSet('./assets/svg/avatars.svg', 128 )
-
+            .icon('cake'       , './assets/svg/cake.svg'        , 24)
+            .icon('mail'       , './assets/svg/mail.svg'        , 24)
             .icon('menu'       , './assets/svg/menu.svg'        , 24)
             .icon('share'      , './assets/svg/share.svg'       , 24)
             .icon('google_plus', './assets/svg/google_plus.svg' , 512)

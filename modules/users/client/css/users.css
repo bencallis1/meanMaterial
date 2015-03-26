@@ -39,3 +39,21 @@
 	min-height: 150px;
 	max-height: 150px;
 }
+.user-sideNav {
+    background: #2196F3;
+    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+.image.avatar img {
+    border-radius: 100%;
+    display: block;
+    width: 100%;
+}
+
+.dark-primary-color    { background: #1976D2; }
+.default-primary-color { background: #2196F3; }
+.light-primary-color   { background: #BBDEFB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #E040FB; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }

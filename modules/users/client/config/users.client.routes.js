@@ -66,10 +66,12 @@ angular.module('users').config(['$stateProvider',
 				templateUrl: 'modules/users/views/password/reset-password.client.view.html'
 			}).
            state('userProfile', {
-                url:'/users/:userId',
+                url:'/userProfile',
                  templateUrl:'modules/users/views/profile/userProfile.html',
                 controller:'usersController',
-                controllerAs:'uc'
+
+
+
         });
 	}
 ]);

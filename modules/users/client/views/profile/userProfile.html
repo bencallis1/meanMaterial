@@ -3,31 +3,34 @@
 <header data-ng-include="'/modules/core/views/header.client.view.html'"></header>
 <div flex layout="row">
     <!-- Container #3 Left -->
-    <div flex layout="row" ng-controller="usersController as ul">
-        <md-sidenav class="landings-sideNav" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2">
-            <md-list>
+    <md-sidenav class="user-sideNav" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2" layout="column" layout-align="space-around center">
 
-                <md-item ng-repeat="it in ul.users" >
-                    <md-button md-no-ink class="md-primary" ui-sref="{{it.state}}" ng-class="{'selected' : it === ul.selected }">
+            <md-button layout-fill class="md-raised md-accent">Home</md-button>
+            <md-button layout-fill  class="md-raised md-accent">Edit</md-button>
+            <md-button layout-fill  class="md-raised md-accent">Blog</md-button>
+            <md-button layout-fill  class="md-raised md-accent" ng-click="signout()">Logout</md-button>
 
-                        <md-icon md-svg-icon="{{it.nav}}" class="avatar"></md-icon>
-                        {{it.name}}
+    </md-sidenav>
+    <div flex layout="column" ui-view="tabContent" id="tabContent"></div>
+    <div layout="column" layout-fill>
+    <md-whiteframe class="md-whiteframe-z5" style="height:200px"layout-fill layout="column" layout-align="end center">
+        <md-toolbar  layout="row" layout-align="center center">
+            <div layout="row" layout-margin>
+                <div flex flex-order="3">
 
-                    </md-button>
+                    <md-button flex="35"  class="md-raised md-accent">Create</md-button>
+                </div>
+                <div flex flex-order="2">
+                    <md-button layout-fill  class="md-raised md-accent">Search</md-button>
+                </div>
+                <div flex flex-order="1">
+                    <md-button flex="35"  class="md-raised md-accent">Create</md-button>
 
-                </md-item>
-            </md-list>
-        </md-sidenav>
+        </md-toolbar>
+    </md-whiteframe>
+    <md-whiteframe class="md-whiteframe-z1" style="height:240px"layout-fill layout-align="center center">
+        <div flex layout-align="center center"layout="row" ui-view="tabContent" id="tabContent"></div>
+    </md-whiteframe>
 
-    <!-- Container #4 Right -->
-    <md-content flex id="content">
-        <!-- User details sample -->
-        <md-icon md-svg-icon="{{ul.selected.nav}}" class="avatar"></md-icon>
-        <h2>{{uc.selected.name}}</h2>
-        <p>{{uc.selected.content}}</p>
-
-        <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
-            <md-icon md-svg-icon="share" ></md-icon>
-        </md-button>
-    </md-content>
+</div>
 </div>

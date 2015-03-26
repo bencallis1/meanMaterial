@@ -12,6 +12,7 @@ module.exports = function(app) {
 	app.route('/api/users/me').get(users.me);
 	app.route('/api/users').put(users.update);
 	app.route('/api/users/accounts').delete(users.removeOAuthProvider);
+    app.route('/api/users/logout').post(users.signout);
 	app.route('/api/users/password').post(users.changePassword);
 	app.route('/api/users/picture').post(users.changeProfilePicture);
 
